@@ -21,3 +21,14 @@ delete user.friendList;
 for (key in user) {
     console.log(key + ":" + user[key]);
 }
+
+
+function quadraticEquation(a, b, c) {
+    let sum = Math.sqrt(a + b + c);
+    let arr = [];
+    arr.push(sum);
+    console.log(arr);
+}
+
+
+quadraticEquation(2, 3, 5);
