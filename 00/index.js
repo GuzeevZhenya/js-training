@@ -24,11 +24,21 @@ for (key in user) {
 
 
 function quadraticEquation(a, b, c) {
-    let sum = Math.sqrt(a + b + c);
+    let Dis, x1, x2;
+    Dis = b ** 2 - 4 * a * c;
+    if (Dis > 0) {
+        x1 = (-b + Math.sqrt(Dis)) / (2 * a);
+        x2 = (-b - Math.sqrt(Dis)) / (2 * a);
+
+    } else if (Dis == 0) {
+        x1 = (-b) / (2 * a);
+
+    } else if (Dis < 0) {
+        console.log('Дискриминант меньше 0');
+    }
     let arr = [];
-    arr.push(sum);
+    arr.push(x1, x2);
     console.log(arr);
 }
 
-
-quadraticEquation(2, 3, 5);
+quadraticEquation(2, 3, 4);
