@@ -1,11 +1,12 @@
 function fizzBuzz(n) {
     for (let i = 1; i <= n; i++) {
-        if (i % 3 === 0) {
+        if (i % 5 === 0 && i % 3 === 0) {
+            console.log('FizzBuzz');
+        } else if (i % 3 === 0) {
             console.log('Fizz');
         } else if (i % 5 === 0) {
             console.log('Buzz')
-        } else if (i % 5 === 0 && i % 3 === 0) {
-            console.log('FizzBuzz');
+
         } else {
             console.log(i);
         }
@@ -16,10 +17,15 @@ fizzBuzz(17);
 
 
 function toNumber(value) {
-    console.log(Number(value));
+    let a = Number(value)
+    if (isNaN(a)) {
+        return 'Нельзя преобразовать в число';
+    } else {
+        return a;
+    }
 }
 
-toNumber('123');
+console.log(toNumber('123wef'));
 
 
 function createUser(name, age, height, weight) {
@@ -63,18 +69,14 @@ console.log(createUser('Anton', 12, 123, 21));
 
 function isPalindrom(word) {
     let wordLength = word.length;
-    let result = "";
 
     for (let i = 0; i < wordLength; i++) {
-        if (word[i] === wordLength - 1 - i) {
-
-        } else {
-
+        if (word[i] !== word[wordLength - 1 - i]) {
+            return false;
         }
     }
-
+    return true;
 }
 
-
-let test = isPalindrom('abba');
+let test = isPalindrom('БАППБАБ');
 console.log(test);
