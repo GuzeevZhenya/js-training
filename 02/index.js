@@ -31,11 +31,7 @@ console.log(pow(3, 5));
 
 
 function isEven(n) {
-    if (n % 2 === 0) {
-        return true;
-    } else {
-        return false;
-    }
+    return n % 2 === 0;
 }
 
 console.log(isEven(4));
@@ -183,4 +179,4 @@ function digitalRoot(value) {
     return sum;
 }
 
-console.log(digitalRoot(16));
+console.log(digitalRoot(12839108239));
