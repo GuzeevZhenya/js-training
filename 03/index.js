@@ -89,28 +89,28 @@ function isEmpty(obj) {
     return true;
 }
 
-//7
+7
 
-// let selfGeneratedUser = {
-//     getInfo: function () {
-//         name = prompt('Ваше имя');
-//         phone = prompt('Ваш номер телефона');
-//         email = prompt('Ваш email');
-//         this.name = name;
-//         this.phone = phone;
-//         this.email = email;
-//     },
-//     introduce: function () {
-//         for (let key in this) {
-//             if (typeof this[key] !== 'function') {
-//                 alert(this[key]);
-//             }
-//         }
-//     }
-// }
+let selfGeneratedUser = {
+    getInfo: function () {
+        name = prompt('Ваше имя');
+        phone = prompt('Ваш номер телефона');
+        email = prompt('Ваш email');
+        this.name = name;
+        this.phone = phone;
+        this.email = email;
+    },
+    introduce: function () {
+        for (let key in this) {
+            if (typeof this[key] !== 'function') {
+                alert(this[key]);
+            }
+        }
+    }
+}
 
-// selfGeneratedUser.getInfo();
-// selfGeneratedUser.introduce();
+selfGeneratedUser.getInfo();
+selfGeneratedUser.introduce();
 
 
 function Dog(name, age, breed) {
@@ -134,9 +134,13 @@ function Dog(name, age, breed) {
             }
         },
         this.teach = function (skills) {
-
             this.skills.push(skills);
         }
+    if (this.skills.length >= 4) {
+        this.bark = function () {
+            console.log('im better');
+        }
+    }
 }
 
 const ratveller = new Dog('ratveller', 12, 'rgfer');
@@ -145,3 +149,14 @@ console.log(ratveller.comeHere('ratvelfer'));
 console.log(ratveller.teach('ergerg'));
 console.log(ratveller.teach('ergerg'));
 console.log(ratveller.skills);
+
+
+const str = 45;
+
+function ing(string) {
+    string += 'alex';
+}
+
+
+let newIng = ing(str);
+console.log(newIng, str, string, ing());
