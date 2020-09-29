@@ -36,7 +36,8 @@
 //     }
 // })
 
-
+// const loginValue = login.value;
+// const passwordValue = password.value;
 const login = document.querySelector('.login');
 const password = document.querySelector('.password');
 const btn = document.querySelector('button');
@@ -49,17 +50,32 @@ const user = {
     password: '12',
     name: 'Lil'
 };
-// const loginValue = login.value;
-// const passwordValue = password.value;
 
-
-login.addEventListener('change', (event) => {
+login.addEventListener('input', (event) => {
+    if (document.body.contains(div)) {
+        div.remove();
+    }
     empty(event);
+
+
 })
 
-password.addEventListener('change', (event) => {
+password.addEventListener('input', (event) => {
     empty(event);
+    if (document.body.contains(div)) {
+        div.remove();
+    }
 })
+
+//Проверка чтобы 2 поля были заполнены
+
+function setDisabledStatus() {
+    if (login.value === "" || password.value === "") {
+        btn.disabled = true;
+    } else {
+        btn.disabled = false;
+    }
+}
 
 function empty(event) {
     const isValid = event.target.value;
@@ -70,20 +86,25 @@ function empty(event) {
         btn.disabled = false;
         event.target.classList.remove('invalid');
     }
+    setDisabledStatus();
 }
 
 btn.addEventListener('click', (event) => {
     event.preventDefault();
-
     if (login.value == user.email && password.value == user.password) {
+        let div = document.createElement('div');
+        document.body.appendChild(div);
         div.innerText = `Привет ${user.name}`;
+        form.remove();
     } else {
-        alert('error');
+        let div = document.createElement('div');
+        div.classList.add('div');
+        document.body.appendChild(div);
+        div.innerText = 'error';
+        password.value = "";
+        login.value = "";
+        btn.disabled = true;
     }
-    password.value = "";
-    login.value = "";
-    btn.disabled = true;
-
 })
 
 

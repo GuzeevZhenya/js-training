@@ -25,3 +25,9 @@ button {
 .disabled {
     opacity: 0;
 }
+
+.div {
+    font-size: 26px;
+    text-align: center;
+    color: red;
+}
