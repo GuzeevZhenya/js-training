@@ -83,6 +83,43 @@
 // console.log(obj);
 
 
+//Классы
+
+// function Person(name) {
+//     this.name = name;
+//     this.run = function() {
+//         console.log(`run ${this.name},run`);
+//     }
+// }
+
+
+
+
+class Man {
+    constructor(duration) {
+        this.duration = duration;
+    }
+    sayHello() {
+        console.log(`hi! my duration is ${this.duraton}`);
+    }
+}
+
+class Person extends Man {
+    constructor(name, someNumber) {
+        super(someNumber);
+        this.name = name;
+    }
+    run() {
+        console.log(`run ${this.name},run`);
+    }
+
+}
+
+
+const forest = new Person('forest', 25);
+forest.run();
+
+
 
 
 //DZ
@@ -117,3 +154,23 @@ console.log(warning);
 
 const success = new Success('405', 'wef');
 console.log(success);
+
+//3
+// const obj = {
+//     bingoBall: 2,
+//     __proto__: function() {
+
+//     }
+// }
+
+// const obj2 = {
+//     bingeBall: 2
+// }
+
+// function Bingo() {
+
+// }
+
+Object.prototype.bingo = function() {
+
+}
