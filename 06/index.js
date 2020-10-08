@@ -1,8 +1,6 @@
-const form = document.querySelector('#registerForm');
+const form = document.forms.register;
 const btn = document.querySelector('#btn');
 const INVALID_CLASS = "invalid";
-
-//Проверяет на пустоту в объекте 
 
 
 //Поля для записи из формы
@@ -51,12 +49,30 @@ const formHelper = {
         return {
             name: this.name.value,
             email: this.email.value,
-            password: this.password.value
-        }
-    }
+            password: this.password.value,
+        };
+    },
 };
 
-//принимает DOM ноту и статус валидации
+form.addEventListener('input', (event) => {
+    //Получаем значение Input
+    const value = event.target.value;
+    //Получаем имя input
+    const name = event.target.name;
+
+    // по ключу name заносим в Объект значение
+    formHelper[name].value = value;
+    // formHelper[name].checkValidation();
+    const bindedValidator = formHelper[name].checkValidation.bind(formHelper);
+    bindedValidator();
+
+
+    //вызываем метод и завернем в btn.disabled результат
+    btn.disabled = !formHelper.checkFormValidation();
+    handleClassAdding(event.target, formHelper[name].valid);
+});
+
+//принимает DOM ноlу и статус валидации
 function handleClassAdding(domNode, isValid) {
     if (isValid) {
         domNode.classList.remove(INVALID_CLASS);
@@ -65,29 +81,9 @@ function handleClassAdding(domNode, isValid) {
     }
 }
 
-form.addEventListener('input', (event) => {
-    //Получаем значение Input
-    const value = event.target.value;
-    //Получаем имя input
-    const name = event.target.name;
-
-
-    const bindedValidator = formHelper[name].checkFormValidation.bind(formHelper);
-    bindedValidator();
-
-    // по ключу name заносим в Объект значение
-    formHelper[name].value = value;
-    formHelper[name].checkValidation();
-    //вызываем метод и завернем в btn.disabled результат
-    btn.disabled = !formHelper.checkFormValidation();
-    handleClassAdding(event.target, formHelper);
-});
-
-
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();
     //запись данных пользователя в переменную
     const user = formHelper.getValue();
-
 })
