@@ -9,20 +9,24 @@
 
 <body>
 
-    <div class="page" id="page">
+    <div class="page" id="page" name="register">
         <div class="container">
-            <form action="" class="registerForm name=" register"">
-                <input type="text" name="name" placeholder="name" id="nameInput">
-                <input type="email" name="email" placeholder="email" id="emailInput">
-                <input type="password" name="password" placeholder="password" id="password">
-                <input type="password" name="repeatPasswor" placeholder="repeatPassword" id="repeatPassword">
-                <button class="btn" type="submit">Submit</button>
+            <form action="registerForm" name="register" id="registerForm" novalidate>
+                <input type="text" name="name" placeholder="Name" id="nameInput">
+                <input type="email" name="email" placeholder="Email" id="emailInput">
+                <input type="password" name="password" placeholder="password" id="passwordInput">
+                <input type="password" name="repeatPassword" placeholder="Repeat password" id="repeatPassword">
+                <button id="btn">Submit</button>
+
             </form>
         </div>
     </div>
 
 
+
     <script src="index.js"></script>
+
+
 </body>
 
 </html>
