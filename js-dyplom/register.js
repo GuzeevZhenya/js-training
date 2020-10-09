@@ -1,7 +1,7 @@
 const form = document.forms.register;
 const btn = document.querySelector('#btn');
 const INVALID_CLASS = "invalid";
-
+//let users = [];
 
 //Поля для записи из формы
 const formHelper = {
@@ -85,5 +85,6 @@ form.addEventListener('submit', (event) => {
     event.preventDefault();
     //запись данных пользователя в переменную
     const user = formHelper.getValue();
-    console.log(user)
+    users.push(user);
+    console.log(users);
 })
