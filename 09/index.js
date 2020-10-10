@@ -83,10 +83,17 @@ function InfoTable(users) {
         let btnDelete = document.createElement('button');
         document.body.append(btnDelete);
         btnDelete.innerHTML = 'Удалить';
+        // btnDelete.classList.add(`btn`+[i]);
+
+
         btnDelete.addEventListener('click', (event) => {
             event.preventDefault();
-            console.log(event.target);
-            users.splice(event.target);
+            users.splice(i, 1);
+            console.log(users);
+            row.remove();
+            btnDelete.remove();
+            // let remove = this.closest(cell);
+            // remove.remove();
         });
     }
 }
