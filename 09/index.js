@@ -3,7 +3,7 @@ const users = [{
         company: "Google",
         email: "alex @gmail.com",
         phone: "+375292929292",
-        balance: "$54",
+        balance: "54",
         isActive: false,
         gender: "female",
     },
@@ -12,7 +12,7 @@ const users = [{
         company: "Yandex",
         email: "vlad @gmail.com",
         phone: "+375293429232",
-        balance: "$64",
+        balance: "64",
         isActive: false,
         gender: "female",
     }, {
@@ -20,7 +20,7 @@ const users = [{
         company: "Google",
         email: "alex @gmail.com",
         phone: "+37529223492",
-        balance: "$57",
+        balance: "57",
         isActive: false,
         gender: "female",
     }, {
@@ -28,7 +28,7 @@ const users = [{
         company: "Google",
         email: "alex @gmail.com",
         phone: "+375292929292",
-        balance: "$79",
+        balance: "79",
         isActive: false,
         gender: "male",
     }, {
@@ -36,7 +36,7 @@ const users = [{
         company: "Google",
         email: "alex @gmail.com",
         phone: "+375292929292",
-        balance: "$43",
+        balance: "43",
         isActive: false,
         gender: "male",
     }, {
@@ -44,7 +44,7 @@ const users = [{
         company: "Google",
         email: "alex @gmail.com",
         phone: "+375292929292",
-        balance: "$54",
+        balance: "54",
         isActive: false,
         gender: "male",
     }, {
@@ -52,7 +52,7 @@ const users = [{
         company: "Google",
         email: "alex @gmail.com",
         phone: "+375292929292",
-        balance: "$58",
+        balance: "58",
         isActive: false,
         gender: "female",
     },
@@ -124,8 +124,6 @@ users.forEach((item) => {
     document.body.appendChild(info);
     info.classList.add('box');
     info.innerHTML = `${name},  ${company},  ${email}, ${phone}, ${balance}, ${isActive}, ${gender}`;
-
-
     let btnDelete = document.createElement('button');
     document.body.append(btnDelete);
     btnDelete.innerHTML = 'Удалить';
@@ -138,13 +136,29 @@ users.forEach((item) => {
         // btnDelete.remove();
         console.log(users);
     });
+
+
+    
 });
 
-const allWomen = (users) => users.filter((item) => item.gender === 'female');
+
+let womenInfo = document.querySelector('.female-info');
+let menInfo = document.querySelector('.men-info');
+// document.body.appendChild(allWomen);
+
+
+allWomen = (users) => users.filter((item) => item.gender === 'female');
 console.log(allWomen(users));
+allMen = (users) => users.filter((item) => item.gender === 'male');
+console.log(allMen(users).length);
+
+womenInfo.innerHTML = `Количество женщин: ` + allWomen(users).length;
+menInfo.innerHTML =`Количество мужчин: ` +allMen(users).length;
+
+// const allWomen = (users) =>users.reduce((count,item)=>(count + item.gender),0 === 'female');
+// console.log(allWomen(users));
+
 
 const bigestBalance = (users) => users
-        .sort((a, b) => a.balance - b.balance);
-console.log(bigestBalance(users)[users.length-1]);
-
-
+    .sort((a, b) => a.balance - b.balance);
+console.log(bigestBalance(users)[users.length - 1]);
