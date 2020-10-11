@@ -109,21 +109,21 @@ const users = [{
 //     // document.querySelector('body').appendChild(` < p > $ { info } < \p > `);
 // })
 
-const {
-    name,
-    company,
-    email,
-    phone,
-    balance,
-    isActive,
-    gender
-} = users;
-users.forEach((item) => {
 
+users.forEach((item) => {
+    const {
+        name,
+        company,
+        email,
+        phone,
+        balance,
+        isActive,
+        gender
+    } = item;
     let info = document.createElement('div');
     document.body.appendChild(info);
     info.classList.add('box');
-    info.innerHTML = `${item.name},  ${item.company},  ${item.email}, ${item.phone}, ${item.balance}, ${item.isActive}, ${item.gender}`;
+    info.innerHTML = `${name},  ${company},  ${email}, ${phone}, ${balance}, ${isActive}, ${gender}`;
 
 
     let btnDelete = document.createElement('button');
