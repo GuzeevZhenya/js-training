@@ -135,25 +135,28 @@ users.forEach((item) => {
         // item.remove();
         // btnDelete.remove();
         console.log(users);
+
+        calculateUsers(users);
+        
     });
 
 
-    
 });
 
 
-let womenInfo = document.querySelector('.female-info');
-let menInfo = document.querySelector('.men-info');
-// document.body.appendChild(allWomen);
+function calculateUsers(users){
+    let womenInfo = document.querySelector('.female-info');
+    let menInfo = document.querySelector('.men-info');
+    allWomen = (users) => users.filter((item) => item.gender === 'female');
+       
+    allMen = (users) => users.filter((item) => item.gender === 'male');
+      
+    womenInfo.innerHTML = `Количество женщин: ` + allWomen(users).length;
+    menInfo.innerHTML =`Количество мужчин: ` +allMen(users).length;
+}
 
+calculateUsers(users);
 
-allWomen = (users) => users.filter((item) => item.gender === 'female');
-console.log(allWomen(users));
-allMen = (users) => users.filter((item) => item.gender === 'male');
-console.log(allMen(users).length);
-
-womenInfo.innerHTML = `Количество женщин: ` + allWomen(users).length;
-menInfo.innerHTML =`Количество мужчин: ` +allMen(users).length;
 
 // const allWomen = (users) =>users.reduce((count,item)=>(count + item.gender),0 === 'female');
 // console.log(allWomen(users));
