@@ -86,7 +86,7 @@ function InfoTable(users) {
         btnDelete.addEventListener('click', (event) => {
             event.preventDefault();
             console.log(event.target);
-            users.splice(event.target);
+            users.splice(event.target, 1);
         });
     }
 }
