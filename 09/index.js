@@ -135,14 +135,10 @@ users.forEach((item) => {
         // item.remove();
         // btnDelete.remove();
         console.log(users);
-
-        calculateUsers(users);
+calculateUsers(users);
         
     });
-
-
 });
-
 
 function calculateUsers(users){
     let womenInfo = document.querySelector('.female-info');
