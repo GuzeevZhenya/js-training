@@ -56,8 +56,6 @@ login.addEventListener('input', (event) => {
         div.remove();
     }
     empty(event);
-
-
 })
 
 password.addEventListener('input', (event) => {
@@ -68,7 +66,7 @@ password.addEventListener('input', (event) => {
 })
 
 //Проверка чтобы 2 поля были заполнены
-
+// и блокирует или нет кнопку
 function setDisabledStatus() {
     if (login.value === "" || password.value === "") {
         btn.disabled = true;
@@ -101,6 +99,9 @@ btn.addEventListener('click', (event) => {
         div.classList.add('div');
         document.body.appendChild(div);
         div.innerText = 'error';
+
+        //либо можно стерает все в форме
+        //form.reset();
         password.value = "";
         login.value = "";
         btn.disabled = true;

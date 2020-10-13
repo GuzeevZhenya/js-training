@@ -124,10 +124,10 @@ forest.run();
 
 //DZ
 function Modal() {
-    this.show = function() {
+    this.show = function () {
         console.log(`show ${this.name}`);
     };
-    this.hide = function() {
+    this.hide = function () {
         console.log(`hide,${this.name}`);
     };
 }
@@ -139,7 +139,7 @@ function Warning(name, message) {
 }
 
 function Success(name, message) {
-    // this.__proto__ = new Modal();
+    // this.__proto__ = new Modal(); //если есть аргументы
     this.name = name;
     this.message = message;
 }
@@ -171,6 +171,45 @@ console.log(success);
 
 // }
 
-Object.prototype.bingo = function() {
+Object.prototype.bingo = function () {
+    for (const key in this) {
+        if (typeof this[key] !== 'function' && key.startsWith('bingo')) {
+            console.log('bingo');
+            return;
+        }
+    }
+}
 
+class Anouncer {
+    constructor() {}
+    present() {
+        console.log(`hello`);
+    }
+}
+
+class Figure extends Anouncer {
+    constructor(size) {
+        super();
+        this.size = size;
+    }
+}
+
+class Circle extends Figure {
+    constructor(size, type) {
+        super(size);
+        this.type = type;
+    }
+    getArea() {
+        return this.size ** 2 * Math.PI;
+    }
+}
+
+class Square extends Figure {
+    constructor(size, type) {
+        super(size);
+        this.type = type;
+    }
+    getArea() {
+        return this.size ** 2;
+    }
 }
