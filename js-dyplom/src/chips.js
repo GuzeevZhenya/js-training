@@ -1,5 +1,9 @@
+
+//export let chipsClass = [chipsCreate,deleteChips,addChips];
+
+// export let chipsClass = {chipsCreate,deleteChips,addChips};
 //Выподашка при успешной авторизации
-function chips(message, timeremove = 3000) {
+export function chipsCreate(message, timeremove = 3000) {
     let chips = document.createElement('div');
     chips.classList.add('chips');
     chips.innerHTML = message;
@@ -7,11 +11,11 @@ function chips(message, timeremove = 3000) {
     setTimeout(function() { deleteChips(chips) }, timeremove)
 }
 
-function deleteChips(chips) {
+export function deleteChips(chips) {
     chips.remove();
 }
 
-function addChips(chips) {
+export function addChips(chips) {
     let chipsField = document.querySelector('.chips-field');
     console.log(chipsField);
 }
