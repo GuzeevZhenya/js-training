@@ -1,3 +1,4 @@
+//Выподашка при успешной авторизации
 function chips(message, timeremove = 3000) {
     let chips = document.createElement('div');
     chips.classList.add('chips');
