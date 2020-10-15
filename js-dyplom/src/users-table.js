@@ -1,4 +1,4 @@
-const users = [{
+export const usersInfo = [{
         name: "Alex",
         company: "Google",
         email: "alex @gmail.com",
@@ -92,7 +92,7 @@ users.forEach((item) => {
 });
 
 
-function calculateUsers(users) {
+export function calculateUsers(users) {
     let womenInfo = document.querySelector('.female-info');
     let menInfo = document.querySelector('.men-info');
     const allWomen = (users) => users.filter((item) => item.gender === 'female');
@@ -108,6 +108,6 @@ calculateUsers(users);
 // console.log(allWomen(users));
 
 
-const bigestBalance = (users) => users
+export const bigestBalance = (users) => users
     .sort((a, b) => a.balance - b.balance)[users.length - 1];
 console.log(bigestBalance(users));

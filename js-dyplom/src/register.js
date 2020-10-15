@@ -1,10 +1,10 @@
-const form = document.forms.register;
-const btn = document.querySelector('#btn');
-const INVALID_CLASS = "invalid";
-let users = [];
+export const form = document.forms.register;
+export const btn = document.querySelector('#btn');
+export const INVALID_CLASS = "invalid";
+export let users = [];
 
 //Поля для записи из формы
-const formHelper = {
+export const formHelper = {
     name: {
         value: '',
         valid: false,
@@ -72,7 +72,7 @@ form.addEventListener('input', (event) => {
 });
 
 //принимает DOM ноlу и статус валидации
-function handleClassAdding(domNode, isValid) {
+export function handleClassAdding(domNode, isValid) {
     if (isValid) {
         domNode.classList.remove(INVALID_CLASS);
     } else {

@@ -1,8 +1,8 @@
-const login = document.querySelector('.login');
-const password = document.querySelector('.password');
-const btnLogin = document.querySelector('#btnLogin');
-const formLogin = document.querySelector('form');
-const div = document.querySelector('.div');
+export const login = document.querySelector('.login');
+export const password = document.querySelector('.password');
+export const btnLogin = document.querySelector('#btnLogin');
+export const formLogin = document.querySelector('form');
+export const div = document.querySelector('.div');
 
 
 const users = {
@@ -27,7 +27,7 @@ password.addEventListener('input', (event) => {
 
 //Проверка чтобы 2 поля были заполнены
 
-function setDisabledStatus() {
+export function setDisabledStatus() {
     if (login.value === "" || password.value === "") {
         btnLogin.disabled = true;
     } else {
@@ -35,7 +35,7 @@ function setDisabledStatus() {
     }
 }
 
-function empty(event) {
+export function empty(event) {
     const isValid = event.target.value;
     if (isValid === "") {
         btnLogin.disabled = true;
